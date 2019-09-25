@@ -4,19 +4,17 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="index.css">
     <title>To Do List</title>
-
     <script>
-    myFunction();{
+    function myFunction() {
       var checkBox = document.getElementById(myCheck);
     if (myCheck.checkBox == true) {
         document.write("You have completed a task!");
     } else
       (myCheck.checkBox == false); {
-      document.write("Not completed")
+      document.write("Not completed");
     }
   }
     </script>
-
   </head>
   <body>
     <div class= "title">
@@ -28,11 +26,11 @@
     </div>
     <div class= "shower">
          <h2>Take a shower</h2>
-         <input type="checkbox" name="shower">
+         <input type="checkbox" name="shower" onclick="myFunction()" id="myCheck">
     </div>
     <div class="work">
          <h2>Get ready for work</h2>
-         <input type="checkbox" name="work">
+         <input type="checkbox" name="work" onclick="myFunction()" id="myCheck">
     </div>
   </body>
 </html>
