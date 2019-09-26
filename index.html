@@ -6,15 +6,28 @@
     <title>To Do List</title>
     <script>
       function myFunction(){
+        //Whent the box is checked. It says "Completed".
         var clean = document.getElementById('clean');    
         if (clean.checked) {
           greeting = "Completed"
           document.getElementById("C").innerHTML = greeting;
          } 
         else{
+          //When the box is unchecked. It says "Not Completed".
           greeting = "Not Completed"
           document.getElementById("C").innerHTML = greeting;
          } 
+          var cook = document.getElementById("Ck");
+          //Cook checkbox checked.
+          if (cook.checked) {
+            greeting = "Completed"
+            document.getElementById("Ck").innerHTML = greeting;
+          }
+          else {
+            //Cook checkbox unchecked.
+            greeting = "Not Completed"
+            document.getElementById("Ck").innerHTML = greeting;
+          }
         }
     </script>
   </head>
@@ -26,6 +39,11 @@
          <h2>Clean</h2>
          <p id=C></p>
          <input type="checkbox" name="clean" onclick="myFunction()" id="clean">
+    </div>
+    <div class="cook">
+      <h2>Cook</h2>
+      <p id="Ck"></p>
+      <input type="checkbox" name="cook" onclick="myFunction()" id=cook>
     </div>
   </body>
 </html>
