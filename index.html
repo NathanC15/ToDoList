@@ -6,29 +6,23 @@
   <link rel="stylesheet" href="index.css">
   <title>To Do List</title>
   <script>
+    function createNewElement() {
 
-    function myElement() {
-      
-      var newItem = document.createElement("li");
-      var inputValue = document.getElementById("myInput").value;
-      var tasks = document.createTextNode("inputValue"); 
-      newItem.appendChild(tasks);
+      var li = document.createElement("li");
+      var theInputValue = document.getElementById("myInput").value;
+      var textNode = document.createTextNode("theInputValue");
+      li.appendChild(textNode);
 
-      if (inputValue === '') { 
-        alert("You have to write something!");
+      if (theInputValue === "") {
+        alert("You have to add a task!")
       } else {
-        document.getElementById("listtodo").appendChild(tasks); // appendChild appends a node as the last child of a node
+
+        document.getElementById("theUl").appendChild(li);
       }
+
       document.getElementById("myInput").value = "";
 
-      var span = document.createElement("span");
-      var txt = document.createTextNode("\u00D7"); // \u00D7 means multiplication sign in HTML Unicode UTF-8
-      span.className = "myInput";
-      span.appendChild(txt);
-      newItem.appendChild(span);
-
-      }
-
+    }
   </script>
 </head>
 
@@ -36,12 +30,19 @@
   <div id="addbar" class="header">
     <h2>To-Do-List</h2>
     <input type="text" id="myInput" placeholder="Add Tasks..." value="tasks">
-    <span type="button" onclick="myElement()" class="addBtn">Add</span>
+    <span type="button" onclick="createNewElement()" id="addBtn">Add</span>
   </div>
 
-  <ul id="listtodo">
+  <ul id="theUl">
     <li></li>
   </ul>
+
+  <div class="completedTasks">
+    <h2>Completed Tasks / :Total Tasks</h2>
+  </div>
+  <div class="percentCompleted">
+    <h2>Percentage Complete:</h2>
+  </div>
 
 </body>
 
