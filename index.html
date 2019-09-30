@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="index.css">
-    <title>To Do List</title>
-    <script>
-      function myFunction(){
-        //Whent the box is checked. It says "Completed".
-        var clean = document.getElementById('clean');    
-        if (clean.checked) {
-          greeting = "Completed"
-          document.getElementById("C").innerHTML = greeting;
-         } 
-        else{
-          //When the box is unchecked. It says "Not Completed".
-          greeting = "Not Completed"
-          document.getElementById("C").innerHTML = greeting;
-         } 
-          var cook = document.getElementById("Ck");
-          //Cook checkbox checked.
-          if (cook.checked) {
-            greeting = "Completed"
-            document.getElementById("Ck").innerHTML = greeting;
-          }
-          else {
-            //Cook checkbox unchecked.
-            greeting = "Not Completed"
-            document.getElementById("Ck").innerHTML = greeting;
-          }
-        }
-    </script>
-  </head>
-  <body>
-    <div class= "title">
-            <h1>To-Do-List</h1>
-    </div>
-    <div class="clean">
-         <h2>Clean</h2>
-         <p id=C></p>
-         <input type="checkbox" name="clean" onclick="myFunction()" id="clean">
-    </div>
-    <div class="cook">
-      <h2>Cook</h2>
-      <p id="Ck"></p>
-      <input type="checkbox" name="cook" onclick="myFunction()" id=cook>
-    </div>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="index.css">
+  <title>To Do List</title>
+  <script>
+
+    function myElement() {
+      
+      var newItem = document.createElement("li");
+      var inputValue = document.getElementById("myInput").value;
+      var tasks = document.createTextNode("inputValue"); 
+      newItem.appendChild(tasks);
+
+      if (inputValue === '') { 
+        alert("You have to write something!");
+      } else {
+        document.getElementById("listtodo").appendChild(tasks); // appendChild appends a node as the last child of a node
+      }
+      document.getElementById("myInput").value = "";
+
+      var span = document.createElement("span");
+      var txt = document.createTextNode("\u00D7"); // \u00D7 means multiplication sign in HTML Unicode UTF-8
+      span.className = "myInput";
+      span.appendChild(txt);
+      newItem.appendChild(span);
+
+      }
+
+  </script>
+</head>
+
+<body>
+  <div id="addbar" class="header">
+    <h2>To-Do-List</h2>
+    <input type="text" id="myInput" placeholder="Add Tasks..." value="tasks">
+    <span type="button" onclick="myElement()" class="addBtn">Add</span>
+  </div>
+
+  <ul id="listtodo">
+    <li></li>
+  </ul>
+
+</body>
+
 </html>
