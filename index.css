@@ -10,14 +10,14 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-     background-size: cover;
+    background-size: cover;
 }
 
 
 .header {
-    font-size: 100px;
+    font-size: 50px;
     text-align: center;
-    margin-top: 0%; 
+    margin-top: 0%;
     color: lightblue;
 }
 
@@ -36,24 +36,24 @@ ul {
 
 
 ul li {
-   cursor: pointer; 
-   position: relative;
-   background-color: cover;
-   text-align: center; 
-   list-style-type: none;
-   font-weight: bold;
-   color: lightblue;
+    cursor: pointer;
+    position: relative;
+    background-color: cover;
+    text-align: center;
+    list-style-type: none;
+    font-weight: bold;
+    color: lightblue;
 }
 
 
 ul li:hover {
     background-color: grey;
- }
- 
+}
+
 
 
 .addBtn {
-    cursor: pointer; 
+    cursor: pointer;
     font-size: 40px;
     padding: 5px;
     width: 25%;
@@ -63,4 +63,23 @@ ul li:hover {
 
 .addBtn:hover {
     background-color: grey;
+}
+
+.completedTasks {
+    cursor: pointer;
+    position: relative;
+    background-color: cover;
+    text-align: center;
+    list-style-type: none;
+    color: lightblue;
+}
+
+
+.percentCompleted {
+    cursor: pointer;
+    position: relative;
+    background-color: cover;
+    text-align: center;
+    list-style-type: none;
+    color: lightblue;
 }
